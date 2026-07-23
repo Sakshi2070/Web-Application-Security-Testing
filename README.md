@@ -20,6 +20,16 @@ The project focuses on practical testing of authentication, access control, requ
 
 ---
 
+## Features
+
+- HTTP request interception
+- Request modification using Burp Repeater
+- Authentication request analysis
+- Authorization testing
+- Security header inspection
+- Manual web application testing
+- OWASP Top 10 aligned assessment
+
 ## Tools Used
 
 - OWASP Juice Shop
@@ -76,7 +86,7 @@ The captured requests were examined for security-related HTTP headers.
 The application implements several defensive HTTP response headers that help mitigate common browser-based attacks.
 
 ---
-## 2. Authorization Testing (OWASP A01)
+## 3. Authorization Testing (OWASP A01)
 
 Protected API endpoints were accessed to observe how the application handled unauthorized requests.
 
@@ -92,7 +102,7 @@ This indicates that authentication is required before protected resources can be
 
 ---
 
-## 3. Injection Testing (OWASP A03)
+## 4. Injection Testing (OWASP A03)
 
 The intercepted login request was modified using Burp Repeater.
 
@@ -103,21 +113,6 @@ Test payloads were inserted into request parameters to observe how the applicati
 A malformed request generated a server error because the JSON structure became invalid.
 
 No successful SQL Injection or authentication bypass was observed during testing.
-
----
-
-## 4. Security Header Analysis (OWASP A02)
-
-HTTP responses were inspected for security-related headers.
-
-Headers observed included:
-
-- X-Content-Type-Options
-- X-Frame-Options
-- Content-Type
-- Keep-Alive
-
-These headers contribute to browser-side security and were reviewed as part of the assessment.
 
 ---
 
@@ -135,7 +130,7 @@ The objective was to observe how the application handled unexpected or malformed
 
 | ID | Finding | Observation | Severity |
 |----|---------|-------------|----------|
-| A01 | Authorization Enforcement | Protected API endpoints returned **401 Unauthorized** when accessed without valid authentication, indicating that authorization checks were enforced for the tested endpoint. | Informational |
+| A01 | Authorization Enforcement | Protected API endpoints returned **401 Unauthorized** when accessed without valid authentication, indicating that authorization checks were enforced for the tested endpoint. | Low |
 | A02 | HTTP Security Header Analysis | HTTP requests and responses were analyzed, including security-related response headers such as **X-Frame-Options** and **X-Content-Type-Options**. | Informational |
 | A03 | Injection Testing | Login requests were modified using Burp Repeater to test for SQL Injection. The application returned a JSON parsing error due to malformed input, and no successful SQL Injection was observed. | Informational |
 | A05 | Response Handling | Application responses were reviewed while submitting modified requests to observe how unexpected input was handled. | Informational |
@@ -143,7 +138,7 @@ The objective was to observe how the application handled unexpected or malformed
 
 # OWASP Top 10 Mapping
 
-| OWASP Category | Status |
+| OWASP Category | Activity performed |
 |---------------|--------|
 | A01 Broken Access Control | Tested |
 | A02 Cryptographic Failures | Header inspection performed |
@@ -200,15 +195,17 @@ screenshots/
 Web-Application-Security-Testing/
 │
 ├── README.md
-├── findings.md
-├── screenshots/
-│   ├── 01_login_request_intercept.png
-│   ├── 02_login_request_repeater.png
-│   ├── 03_sql_payload_500_response.png
-│   ├── 04_authorization_401_response.png
-│   └── 05_response_headers.png
-```
-
+├── findings/
+│   ├── A01_Broken_Access_Control.md
+│   ├── A02_Cryptographic_Failures.md
+│   ├── A03_Injection.md
+│   └── A05_Security_Misconfiguration.md
+│
+└── screenshots/
+    ├── 01_http_history.png
+    ├── 02_login_request_repeater.png
+    ├── 03_authenticated_request.png
+    └── 04_unauthorized_request.png
 ---
 
 ## Disclaimer
