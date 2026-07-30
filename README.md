@@ -202,10 +202,13 @@ Web-Application-Security-Testing/
 │   └── A05_Security_Misconfiguration.md
 │
 └── screenshots/
-    ├── 01_http_history.png
-    ├── 02_login_request_repeater.png
-    ├── 03_authenticated_request.png
-    └── 04_unauthorized_request.png
+    ├── 01_login_request_intercept.png
+│   ├── 02_successful_login_jwt.png
+│   ├── 03_authorization_401.png
+│   ├── 04_http_request_analysis.png
+│   ├── 05_response_headers.png
+│   ├── 06_security_misconfiguration.png
+│   └── 07_whoami_endpoint.png
 ---
 
 ## Disclaimer
