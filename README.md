@@ -195,20 +195,14 @@ screenshots/
 Web-Application-Security-Testing/
 │
 ├── README.md
-├── findings/
-│   ├── A01_Broken_Access_Control.md
-│   ├── A02_Cryptographic_Failures.md
-│   ├── A03_Injection.md
-│   └── A05_Security_Misconfiguration.md
-│
 └── screenshots/
-    ├── 01_login_request_intercept.png
-│   ├── 02_successful_login_jwt.png
-│   ├── 03_authorization_401.png
-│   ├── 04_http_request_analysis.png
-│   ├── 05_response_headers.png
-│   ├── 06_security_misconfiguration.png
-│   └── 07_whoami_endpoint.png
+   ├── 01_login_request_intercept.png
+   ├── 02_successful_login_jwt.png
+   ├── 03_authorization_401.png
+   ├── 04_http_request_analysis.png
+   ├── 05_response_headers.png
+   ├── 06_security_misconfiguration.png
+   └── 07_whoami_endpoint.png
 ---
 
 ## Disclaimer
